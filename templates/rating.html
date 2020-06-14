@@ -2,270 +2,282 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="stylesheet.css">
-  <title>Social Distancing Enforcement Rating</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  <style>
-.navbar-inverse.nav-upper {
-  height: 50px;
-  padding-left: 10%;
-  padding-top: 3%;
-}
-#logo{
-	position: absolute;;
-	top:18px;
-    left:5px;
-}
-
-@media (min-width: 768px) {
-  .navbar.navbar-lower .navbar-nav {
-    margin-left: 40px;
-    margin-top : 30px;
-  }
-        .form-inline .form-control {
-            width: 525px;
+    <title>Social Distancing Enforcement Rating</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <style>
+        .navbar-inverse.nav-upper {
+            height: 50px;
+            padding-left: 10%;
+            padding-top: 3%;
         }
 
-        hr.style-one {
-            border: 0;
-            height: 1px;
-            background: #333;
-            background-image: linear-gradient(to right, #ccc, #333, #ccc);
+        #logo {
+            position: absolute;;
+            top: 18px;
+            left: 5px;
         }
 
-        .container-fluid {
-            position: absolute;
-        }
+        @media (min-width: 768px) {
+            .navbar.navbar-lower .navbar-nav {
+                margin-left: 40px;
+                margin-top: 30px;
+            }
 
-        .h2 {
-            position: fixed;
-        }
+            .form-inline .form-control {
+                width: 525px;
+            }
 
-        .main{
-    margin-top:3%;
-}
-.col-sm-4{
-    margin-top:14.5%;
-}
-@media only screen and (max-width: 1200px) { 
-  .col-sm-4 { 
-    display: none; 
-  } 
-}
+            hr.style-one {
+                border: 0;
+                height: 1px;
+                background: #333;
+                background-image: linear-gradient(to right, #ccc, #333, #ccc);
+            }
 
-.star-rating {
-  font-size: 0;
-  white-space: nowrap;
-  display: inline-block;
-  width: 250px;
-  height: 50px;
-  overflow: hidden;
-  
-  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
-  background-size: contain;
-  position: absolute;
-  
-  
-}
-.star-rating i {
-  opacity: 0;
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 20%;
-  z-index: 1;
-  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
-  background-size: contain;
-}
-.star-rating input {
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  opacity: 0;
-  display: inline-block;
-  width: 20%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  z-index: 2;
-  position: relative;
-}
-.star-rating input:hover + i,
-.star-rating input:checked + i {
-  opacity: 1;
-}
-.star-rating i ~ i {
-  width: 40%;
-}
-.star-rating i ~ i ~ i {
-  width: 60%;
-}
-.star-rating i ~ i ~ i ~ i {
-  width: 80%;
-}
-.star-rating i ~ i ~ i ~ i ~ i {
-  width: 100%;
-}
-::after,
-::before {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  text-align: center;
-  vertical-align: middle;
-}
+            .container-fluid {
+                position: absolute;
+            }
+
+            .h2 {
+                position: fixed;
+            }
+
+            .main {
+                margin-top: 3%;
+            }
+
+            .col-sm-4 {
+                margin-top: 14.5%;
+            }
+
+            @media only screen and (max-width: 1200px) {
+                .col-sm-4 {
+                    display: none;
+                }
+            }
+
+            .star-rating {
+                font-size: 0;
+                white-space: nowrap;
+                display: inline-block;
+                width: 250px;
+                height: 50px;
+                overflow: hidden;
+                position: relative;
+                background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+                background-size: contain;
+            }
+
+            .star-rating i {
+                opacity: 0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: 20%;
+                z-index: 1;
+                background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+                background-size: contain;
+            }
+
+            .star-rating input {
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                opacity: 0;
+                display: inline-block;
+                width: 20%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                z-index: 2;
+                position: relative;
+            }
+
+            .star-rating input:hover + i,
+            .star-rating input:checked + i {
+                opacity: 1;
+            }
+
+            .star-rating i ~ i {
+                width: 40%;
+            }
+
+            .star-rating i ~ i ~ i {
+                width: 60%;
+            }
+
+            .star-rating i ~ i ~ i ~ i {
+                width: 80%;
+            }
+
+            .star-rating i ~ i ~ i ~ i ~ i {
+                width: 100%;
+            }
+
+            ::after,
+            ::before {
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                text-align: center;
+                vertical-align: middle;
+            }
 
 
-  </style>
+    </style>
 </head>
 <body>
 
-    <div id="logo">
-        <img src="https://i.ibb.co/VVdPcfX/f9d0dcb7-9bc2-44f2-a077-ab68a8db7cdd-200x200.png" style="width:135px;height:135px;">
-    </div>
-    <div class="container" >
-    
-        <div class="row">
-          
-          <div class="col-sm-8">
-<nav class="navbar-inverse nav-upper">
-
-    <form class="form-inline my-2 my-lg-0 ">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
-    </ul>
-    
-</nav>
-
-<nav class="navbar navbar-inverse navbar-static-top navbar-lower">
-    <nav class="navbar navbar-expand-sm  navbar-light">
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item" style="padding-left:2.8em">
-                    <a class="nav-link" href="{{ url_for('stores_list', category='Restaurants') }}">Restaurants</a>
-                </li>
-                <li class="nav-item" style="padding-left:2.8em">
-                    <a class="nav-link" href="{{ url_for('stores_list', category='Hair Salons') }}">Hair Salons</a>
-                </li>
-                <li class="nav-item" style="padding-left:2.8em">
-                    <a class="nav-link" href="{{ url_for('stores_list', category='Department Stores_Grocery') }}">Department
-                        Stores/Grocery</a>
-                </li>
-            </ul>
-        </div>
-
-    </nav>
-
-    
-          <div class="container" style="margin-top:30px">
-            <div class="row">
-                <div class="col-sm-12">
-          <hr>
-          
-          <h2>Safety Rating</h2>
-          <br>
-          <form>
-            <h5>Rate from 1 - 5</h5><br>
-            <h7>Are the customers and staff maintaining a 6 feet distance?</h7><br> <br>
-            (1 = Very Poor)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="star-rating">
-  <input type="radio" name="rating1" value="1"><i></i>
-  <input type="radio" name="rating1" value="2"><i></i>
-  <input type="radio" name="rating1" value="3"><i></i>
-  <input type="radio" name="rating1" value="4"><i></i>
-  <input type="radio" name="rating1" value="5"><i></i>
-</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5 = Very Good)<br> <br>
-<br> <br><br> <h7>Is cart or basket sanitization implemented?</h7><br> <br>
-            (1 = Very Poor)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="star-rating">
-  <input type="radio" name="rating2" value="1"><i></i>
-  <input type="radio" name="rating2" value="2"><i></i>
-  <input type="radio" name="rating2" value="3"><i></i>
-  <input type="radio" name="rating2" value="4"><i></i>
-  <input type="radio" name="rating2" value="5"><i></i>
-</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5 = Very Good)
-
-            <br> <br>
-            <br> <br><br> <h7>Is the staff taking precautions (gloves, masks)?</h7><br> <br>
-            (1 = Very Poor)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="star-rating">
-  <input type="radio" name="rating3" value="1"><i></i>
-  <input type="radio" name="rating3" value="2"><i></i>
-  <input type="radio" name="rating3" value="3"><i></i>
-  <input type="radio" name="rating3" value="4"><i></i>
-  <input type="radio" name="rating3" value="5"><i></i>
-</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5 = Very Good)
-
-            <br> <br>
-            <br> <br><br> <h7>Please rate the availability of essential products?</h7><br> <br>
-            (1 = Very Poor)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="star-rating">
-  <input type="radio" name="rating4" value="1"><i></i>
-  <input type="radio" name="rating4" value="2"><i></i>
-  <input type="radio" name="rating4" value="3"><i></i>
-  <input type="radio" name="rating4" value="4"><i></i>
-  <input type="radio" name="rating4" value="5"><i></i>
-</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5 = Very Good)
-
-            <br> <br><br><br><br>
-            <h7>Do they have senior only hours?</h7><br>
-            <br>
-            <div class="btn-group btn-group-toggle" data-toggle="buttons">
-
-               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option2" autocomplete="off"> No
-  </label>
-  <label class="btn btn-secondary">
-    <input type="radio" name="options" id="option3" autocomplete="off"> yes
-  </label>
+<div id="logo">
+    <img src="https://i.ibb.co/VVdPcfX/f9d0dcb7-9bc2-44f2-a077-ab68a8db7cdd-200x200.png"
+         style="width:135px;height:135px;">
 </div>
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-sm-8">
+            <nav class="navbar-inverse nav-upper">
+
+                <form class="form-inline my-2 my-lg-0 ">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+
+                </ul>
+
+            </nav>
+
+            <nav class="navbar navbar-inverse navbar-static-top navbar-lower">
+                <nav class="navbar navbar-expand-sm  navbar-light">
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item" style="padding-left:2.8em">
+                                <a class="nav-link" href="{{ url_for('stores_list', category='Restaurants') }}">Restaurants</a>
+                            </li>
+                            <li class="nav-item" style="padding-left:2.8em">
+                                <a class="nav-link" href="{{ url_for('stores_list', category='Hair Salons') }}">Hair
+                                    Salons</a>
+                            </li>
+                            <li class="nav-item" style="padding-left:2.8em">
+                                <a class="nav-link"
+                                   href="{{ url_for('stores_list', category='Department Stores_Grocery') }}">Department
+                                    Stores/Grocery</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </nav>
 
 
+                <div class="container" style="margin-top:30px">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <hr>
 
-<br><br><br>
+                            <h2>Safety Ratings</h2>
+                            <br>
+                            <form action="{{ url_for('safetyratings') }}" method="post">
+                                <h7>Are the customers and staff maintaining a 6 feet distance?</h7>
+                                <br> <br>
+                                (1 = Very Poor)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5
+                                = Very Good)
+                                <span class="star-rating">
+                                <input type="radio" name="ft_dist" value="1"><i></i>
+                                <input type="radio" name="ft_dist" value="2"><i></i>
+                                <input type="radio" name="ft_dist" value="3"><i></i>
+                                <input type="radio" name="ft_dist" value="4"><i></i>
+                                <input type="radio" name="ft_dist" value="5"><i></i>
+                                </span>
+                                <br><br>
+                                <hr>
+                                <label for="fname">Is cart or basket sanitization implemented?</label><br> <br>
+                                <label>Very Poor | </label>
+                                <label class="radio-inline"><input type="radio" name="cart_sanitize" value="1" checked>
+                                    1 </label>
+                                <label class="radio-inline"><input type="radio" name="cart_sanitize" value="2"> 2
+                                </label>
+                                <label class="radio-inline"><input type="radio" name="cart_sanitize" value="3"> 3
+                                </label>
+                                <label class="radio-inline"><input type="radio" name="cart_sanitize" value="4"> 4
+                                </label>
+                                <label class="radio-inline"><input type="radio" name="cart_sanitize" value="5"> 5
+                                </label>
+                                <label> | Very Good</label><br>
+                                <hr>
+                                <label for="fname">How well is the staff taking precautions (gloves, masks)?</label><br>
+                                <br>
+                                <label>Very Poor | </label>
+                                <label class="radio-inline"><input type="radio" name="gm_precautions" value="1" checked>
+                                    1 </label>
+                                <label class="radio-inline"><input type="radio" name="gm_precautions" value="2"> 2
+                                </label>
+                                <label class="radio-inline"><input type="radio" name="gm_precautions" value="3"> 3
+                                </label>
+                                <label class="radio-inline"><input type="radio" name="gm_precautions" value="4"> 4
+                                </label>
+                                <label class="radio-inline"><input type="radio" name="gm_precautions" value="5"> 5
+                                </label>
+                                <label> | Very Good</label><br>
+                                <hr>
+                                <label for="fname">Please rate the availability of essential products:</label><br> <br>
+                                <label>Very Poor | </label>
+                                <label class="radio-inline"><input type="radio" name="ess_avail" value="1" checked> 1
+                                </label>
+                                <label class="radio-inline"><input type="radio" name="ess_avail" value="2"> 2 </label>
+                                <label class="radio-inline"><input type="radio" name="ess_avail" value="3"> 3 </label>
+                                <label class="radio-inline"><input type="radio" name="ess_avail" value="4"> 4 </label>
+                                <label class="radio-inline"><input type="radio" name="ess_avail" value="5"> 5 </label>
+                                <label> | Very Good</label><br>
+                                <hr>
+                                <label for="lname">Does the store administer customer density control (establishments
+                                    are supposed to be operating at partial capacity)</label><br><br>
+                                <label class="radio-inline"><input type="radio" name="density_control" value="yes"
+                                                                   checked> yes </label>
+                                <label class="radio-inline"><input type="radio" name="density_control" value="no"> no
+                                </label><br>
+                                <hr>
+                                <label for="fname">Please provide your overall rating for the enforcement of COVID
+                                    safety measures by the store:</label><br><br>
+                                <label>Very Poor | </label>
+                                <label class="radio-inline"><input type="radio" name="overall_rating" value="1" checked>
+                                    1 </label>
+                                <label class="radio-inline"><input type="radio" name="overall_rating" value="2"> 2
+                                </label>
+                                <label class="radio-inline"><input type="radio" name="overall_rating" value="3"> 3
+                                </label>
+                                <label class="radio-inline"><input type="radio" name="overall_rating" value="4"> 4
+                                </label>
+                                <label class="radio-inline"><input type="radio" name="overall_rating" value="5"> 5
+                                </label>
+                                <label> | Very Good</label><br>
+                                <br>
+                                <br>
+                                <input type="hidden" name="store_id" value="{{ store_id }}">
+                                <input type="submit">
+                                {#                                <button type="button" class="btn btn-success"#}
+                                {#                                        style="width:200px; display: block; margin: 0 auto;">Submit#}
+                                {#                                </button>#}
+                            </form>
 
-            <h7>Overall Safety Rating?</h7><br> <br>
-            (1 = Very Poor)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <span class="star-rating">
-  <input type="radio" name="rating5" value="1"><i></i>
-  <input type="radio" name="rating5" value="2"><i></i>
-  <input type="radio" name="rating5" value="3"><i></i>
-  <input type="radio" name="rating5" value="4"><i></i>
-  <input type="radio" name="rating5" value="5"><i></i>
-</span>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(5 = Very Good)
+                        </div>
+                    </div>
+                </div>
+</body>
 
-            <br> <br>
-            <br> <br><hr>
-            
-             
-              <button type="button" class="btn btn-success" style="width:200px; display: block; margin: 0 auto;">Submit</button>
-          </form>
-          
-            </div>
-        </div>
-    </div>
-        </body>
-
-        </html>
-        
+</html>
