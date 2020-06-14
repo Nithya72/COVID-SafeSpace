@@ -2,35 +2,30 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="stylesheet.css">
-    <title>Social Distancing Enforcement Rating</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <style>
+  <title>Social Distancing Enforcement Rating</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <style>
+.navbar-inverse.nav-upper {
+  height: 50px;
+  padding-left: 10%;
+  padding-top: 3%;
+}
+#logo{
+	position: absolute;;
+	top:18px;
+    left:5px;
+}
 
-
-        .navbar-inverse.nav-upper {
-            height: 50px;
-            padding-left: 165px;
-            padding-top: 30px;
-        }
-
-        #logo {
-            position: absolute;;
-            top: 0;
-            left: 0;
-        }
-
-        @media (min-width: 768px) {
-            .navbar.navbar-lower .navbar-nav {
-                margin-left: 128px;
-                margin-top: 30px;
-            }
-        }
-
+@media (min-width: 768px) {
+  .navbar.navbar-lower .navbar-nav {
+    margin-left: 40px;
+    margin-top : 30px;
+  }
         .form-inline .form-control {
             width: 525px;
         }
@@ -39,23 +34,40 @@
             border: 0;
             height: 1px;
             background: #333;
-            background-image: linear-gradient(to right, #ccc, #333333, #ccc);
+            background-image: linear-gradient(to right, #ccc, #333, #ccc);
+        }
+
+        .container-fluid {
+            position: absolute;
         }
 
         .h2 {
             position: fixed;
         }
 
-
-    </style>
+        .main{
+    margin-top:3%;
+}
+.col-sm-4{
+    margin-top:14.5%;
+}
+@media only screen and (max-width: 1200px) { 
+  .col-sm-4 { 
+    display: none; 
+  } 
+}
+  </style>
 </head>
 <body>
 
-<div id="logo">
-    <img src="https://i.ibb.co/VVdPcfX/f9d0dcb7-9bc2-44f2-a077-ab68a8db7cdd-200x200.png"
-         style="width:135px;height:135px;">
-</div>
-
+    <div id="logo">
+        <img src="https://i.ibb.co/VVdPcfX/f9d0dcb7-9bc2-44f2-a077-ab68a8db7cdd-200x200.png" style="width:135px;height:135px;">
+    </div>
+    <div class="container" >
+    
+        <div class="row">
+          
+          <div class="col-sm-8">
 <nav class="navbar-inverse nav-upper">
 
     <form class="form-inline my-2 my-lg-0 ">
@@ -64,7 +76,7 @@
     </form>
 
     </ul>
-    </div>
+    
 </nav>
 
 <nav class="navbar navbar-inverse navbar-static-top navbar-lower">
@@ -87,70 +99,84 @@
                 </li>
                 <li class="nav-item" style="padding-left:2.8em">
                     <a class="nav-link" href="{{ url_for('stores_list', category='Department Stores_Grocery') }}">Department
-                        Stores_Grocery</a>
+                        Stores/Grocery</a>
                 </li>
             </ul>
-
         </div>
 
     </nav>
-    <div class="container" style="margin-top:30px">
-        <div class="row">
-            <div class="col-sm-12">
-                <hr>
 
-                <h2>Safety Rating</h2>
-                <br>
-                <form action="{{ url_for('safetyratings') }}" method="post">
-                    <h5>Rate from 1 - 5 ( 1 being did not follow, 5 being followed CDC guideline )</h5>
-                    <label for="dist">6 feet distance?</label><br>
-                    <input type="text" id="dist" name="dist"><br>
-                    <label for="sanitize">Cart/basket sanitization?</label><br>
-                    <input type="text" id="sanitize" name="sanitize"><br>
-                    <label for="avail">Availability of essential products?</label><br>
-                    <input type="text" id="avail" name="avail"><br>
-                    <label for="precaution">Staff precautions (gloves, masks)?</label><br>
-                    <input type="text" id="precaution" name="precaution"><br>
-                    <label for="density">Customer density control (is someone checking if the Covid low capacity guideline
-                        is being followed?)</label><br>
-                    <input type="text" id="density" name="density"><br>
-                    <hr>
-
-                    {#                    <br>#}
-
-                    <label for="lname">Do they have senior only hours?</label><br>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-
-                            <input type="checkbox" checked autocomplete="off" name="specialhr"> Yes
-                        </label>
-
-                        <label class="btn btn-secondary active">
-                            <input type="checkbox" checked autocomplete="off" name="specialhr"> No
-                        </label>
-                    </div>
-                    <br>
-                    <label for="lname">One way aisles?</label>
-                    <div class="btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-secondary active">
-
-                            <input type="checkbox" checked autocomplete="off" name="aisle"> Yes
-                        </label>
-
-                        <label class="btn btn-secondary active">
-                            <input type="checkbox" checked autocomplete="off" name="aisle"> No
-                        </label>
-                    </div>
-                    <br><br>
-
-                    {#              <button type="button" class="btn btn-success" style="width:200px; display: block; margin: 0 auto;">Submit</button>#}
-                    <input type="submit">
-                </form>
-
+    
+          <div class="container" style="margin-top:30px">
+            <div class="row">
+                <div class="col-sm-12">
+          <hr>
+          
+          <h2>Safty Rating</h2>
+          <br>
+          <form>
+            <h5>Rate from 1 - 5</h5>
+            <label for="fname">Are the customers and staff maintaining a 6 feet distance?</label><br> 
+            <label>Very Poor | </label>
+            <label class="radio-inline"><input type="radio" name="optradio" checked>      1      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      2      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      3      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      4      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      5      </label>
+            <label> | Very Good</label>
+            <br>
+            <label for="fname">Is cart or basket sanitization implemented?</label><br> 
+            <label>Very Poor | </label>
+            <label class="radio-inline"><input type="radio" name="optradio" checked>      1      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      2      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      3      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      4      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      5      </label>
+            <label> | Very Good</label><br>
+            <label for="fname">Is the staff taking precautions (gloves, masks)?</label><br> 
+            <label>Very Poor | </label>
+            <label class="radio-inline"><input type="radio" name="optradio" checked>      1      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      2      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      3      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      4      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      5      </label>
+            <label> | Very Good</label><br>
+            <label for="fname">Please rate the availability of essential products?</label><br> 
+            <label>Very Poor | </label>
+            <label class="radio-inline"><input type="radio" name="optradio" checked>      1      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      2      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      3      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      4      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      5      </label>
+            <label> | Very Good</label><br>
+            <label for="lname">Does the store administer customer density control (establishments are supposed to be operating at partial capacity)</label><br>
+            <label>Very Poor | </label>
+            <label class="radio-inline"><input type="radio" name="optradio" checked>      1      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      2      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      3      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      4      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      5      </label>
+            <label> | Very Good</label><br>
+            <label for="fname">Are the customers and staff maintaining a 6 feet distance?</label><br> 
+            <label class="radio-inline"><input type="radio" name="optradio" checked>      yes      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      no      </label><br>
+            <label for="fname">Overall Safety Rating?</label><br> 
+            <label>Very Poor | </label>
+            <label class="radio-inline"><input type="radio" name="optradio" checked>      1      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      2      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      3      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      4      </label>
+            <label class="radio-inline"><input type="radio" name="optradio">      5      </label>
+            <label> | Very Good</label><br>
+              <br><br>
+             
+              <button type="button" class="btn btn-success" style="width:200px; display: block; margin: 0 auto;">Submit</button>
+          </form>
+          
             </div>
         </div>
     </div>
-</body>
+        </body>
 
-</html>
-
+        </html>
+        
