@@ -1,0 +1,29 @@
+store_id,store_name,category,address,county,state,open_hours,No_of_reviews,star_rating
+1,Pizza California,Restaurants,"1095 E Brokaw Rd, Str 70, North Valley",Santa Clara,California, 11 AM - 7 PM,541,4
+2,Habit Burger,Restaurants,"2000, El Camino Real, Suite 19",Santa Clara,California, 10 AM - 8 PM,204,3.5
+3,Olive Garden,Restaurants,"1350 Greal Mall Dr, Milpitas",Santa Clara,California, 10 AM - 8 PM,808,3
+4,Venus Cafe,Restaurants,"1698 Hostetter Ste K, Bldg A",Santa Clara,California,7AM - 4 PM,411,3.5
+5,Panera Bread,Restaurants,"503, Coleman Avenue, Downtown",Santa Clara,California, 11 AM - 7 PM,297,3.3
+6,VN Grill,Restaurants,"1085 E BR, Ste 20",Santa Clara,California,7AM - 4 PM,870,4.7
+7,Psycho Donuts,Restaurants,"2000, El Camino Real, Ste 11",Santa Clara,California,7AM - 4 PM,146,3
+8,Chipotle Mexican Grill,Restaurants,"1751 N 1st, Ste 40,",Santa Clara,California, 11 AM - 7 PM,193,2.4
+9,Imagine Beauty Center,Hair Salons,"1701 Lundy Avenue, North Valley",Santa Clara,California, 11 AM - 7 PM,95,4
+10,Great Clips,Hair Salons,"1085 E Brokaw rd, North Valley",Santa Clara,California, 10 AM - 8 PM,149,3.4
+11,My Stylist Salon,Hair Salons,"840 Willow st, Ste a200, Willow Glen",Santa Clara,California, 10 AM - 8 PM,887,5
+12,Ulta Beauty,Hair Salons,"1038 E Brokaw rd, Ste 10, North Valley",Santa Clara,California, 10 AM - 8 PM,443,3
+13,New Hair City,Hair Salons,"2050 Concourse Dr, North Valley",Santa Clara,California, 11 AM - 6 PM,28,4.5
+14,Costco Gasoline,Gas Stations,"1709 Automation Parkway, NV",Santa Clara,California, 11 AM - 7 PM,125,4
+15,Shell,Gas Stations,1601 N Capitol Avenue,Santa Clara,California, 11 AM - 7 PM,71,3
+16,Chevron Station,Gas Stations,790 Montague Expressway,Santa Clara,California, 11 AM - 7 PM,37,2
+17,76,Gas Stations,1705 Berryessa Rd,Santa Clara,California, 11 AM - 7 PM,21,2
+18,Propel Fuels,Gas Stations,1590 McKee Rd27,Santa Clara,California, 10 AM - 8 PM,2,3
+19,Walmart Supercenter,Department Stores_Grocery,301 Ranch drive,Santa Clara,California, 10 AM - 8 PM,725,2
+20,Target,Department Stores_Grocery,2155 Morrill avenue,Santa Clara,California, 10 AM - 8 PM,509,3.5
+21,Sprouts Farmers Market,Department Stores_Grocery,1028 E Brokaw Rd,Santa Clara,California, 10 AM - 8 PM,182,3.8
+22,Safeway,Department Stores_Grocery,555 E Calaveras Blvd,Santa Clara,California, 11 AM - 7 PM,298,2.3
+23,Whole Foods Market,Department Stores_Grocery,"777 The Alameda, Downtown",Santa Clara,California, 11 AM - 7 PM,444,4
+24,CVS Pharmacy,Pharmacy,"2514 Berryessa Rd, Berryessa",Santa Clara,California, 9 AM - 9 PM,3,2.5
+25,Costco Pharmacy,Pharmacy,1709 Automation Parkway,Santa Clara,California, 9 AM - 9 PM,5,3
+26,CVS Pharmacy,Pharmacy,3081 Stevens Creek Boulevard,Santa Clara,California, 9 AM - 9 PM,57,2.8
+27,McKee Medical Pharmacy,Pharmacy,"2350 McKee Rd, Ste  A3, North Valley",Santa Clara,California, 9 AM - 9 PM,15,4
+28,Better Health Pharmacy,Pharmacy,"725 E SC street, Ste 202, Downtown",Santa Clara,California, 9 AM - 9 PM,11,5
