@@ -12,8 +12,6 @@ app.config['MYSQL_DATABASE_HOST'] = 'localhost'
 
 mysql = MySQL()
 mysql.init_app(app)
-conn = mysql.connect()
-cursor = conn.cursor()
 
 @app.route("/rating/<category>/<store_id>")
 def rating(category, store_id):
@@ -41,15 +39,25 @@ def safetyratings():
     print("store_id",store_id)
 
     insert_sql = "INSERT INTO ratings (store_id, ft_dist, cart_sanitize, gm_precautions, ess_avail, density_control, overall_rating) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    conn = mysql.connect()
+    cursor = conn.cursor()
     cursor.execute(insert_sql, (store_id, ft_dist, cart_sanitize, gm_precautions, ess_avail, density_control, overall_rating))
+    cursor.close()
     conn.commit()
+    conn.close()
 
     return redirect(url_for('stores_list', category=category))
 
 
 @app.route("/storesList/<category>")
 def stores_list(category):
-    stores = storesList.storesListings(category)
+    print (category)
+    conn = mysql.connect()
+    cursor = conn.cursor()
+    cursor.execute('''SELECT * FROM Stores WHERE category = %s''', category)
+    stores = cursor.fetchall()
+    cursor.close()
+    conn.close()
     return render_template("stores.html", title="Stores List", stores=stores)
 
 @app.route("/")
