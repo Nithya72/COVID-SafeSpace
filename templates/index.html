@@ -1,181 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <script src="http://maps.google.com/maps/api/js?sensor=false"
-          type="text/javascript"></script>
-    <link rel="stylesheet" href="stylesheet.css">
-    <title>Social Distancing Enforcement Rating</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <style>
+<html>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<style>
+body,h1 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('https://i.ibb.co/yXpGXWV/Caring-for-Elderly-Parents-1024x708.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+p {
+  display: inline;
+}
+#logo{
 
-        .navbar-inverse.nav-upper {
-            height: 50px;
-            padding-left: 165px;
-            padding-top: 30px;
-        }
-
-        #logo {
-            position: absolute;;
-            top: 0;
-            left: 0;
-        }
-
-        @media (min-width: 768px) {
-
-            .navbar.navbar-lower .navbar-nav {
-                margin-left: 128px;
-                margin-top: 30px;
-            }
-        }
-
-        .form-inline .form-control {
-            width: 525px;
-        }
-
-        hr.style-one {
-            border: 0;
-            height: 1px;
-            background: #333;
-            background-image: linear-gradient(to right, #ccc, #333, #ccc);
-        }
-
-        .container-fluid {
-            position: absolute;
-        }
-
-        .h2 {
-            position: fixed;
-        }
-
-        .checked {
-            color: orange;
-        }
-    </style>
-</head>
+}
+.form-inlin{
+    padding-top:38%;
+    padding-left:23%;
+}
+.navbar.transparent.navbar-inverse .navbar-inner {
+   background: rgba(0,0,0,0.4);
+}
+</style>
 <body>
 
-<div id="logo">
-    <img src="https://i.ibb.co/VVdPcfX/f9d0dcb7-9bc2-44f2-a077-ab68a8db7cdd-200x200.png"
-         style="width:135px;height:135px;">
-</div>
 
-<nav class="navbar-inverse nav-upper">
 
-    <form class="form-inline my-2 my-lg-0 ">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
 
-    </ul>
+
+
+
+
+<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+  <div class="w3-display-middle"style="padding-bottom:150px">
+    <div id="logo">
+        <img src="https://i.ibb.co/VVdPcfX/f9d0dcb7-9bc2-44f2-a077-ab68a8db7cdd-200x200.png" style="width:135px;height:135px;">
     </div>
-</nav>
-
-<nav class="navbar navbar-inverse navbar-static-top navbar-lower">
     <nav class="navbar navbar-expand-sm  navbar-light">
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item" style="padding-left:2.8em">
-                    <a class="nav-link" href="{{ url_for('stores_list', category='Restaurants') }}">Restaurants</a>
-                </li>
-                <li class="nav-item" style="padding-left:2.8em">
-                    <a class="nav-link" href="{{ url_for('stores_list', category='Hair Salons') }}">Hair Salons</a>
-                </li>
-                <li class="nav-item" style="padding-left:2.8em">
-                    <a class="nav-link" href="{{ url_for('stores_list', category='Department Stores_Grocery') }}">Department
-                        Stores/Grocery</a>
-                </li>
-            </ul>
-        </div>
+
 
     </nav>
-</nav>
+    <br>
 
-
-    <div class="container" style="margin-top:30px">
-
-        <div class="row">
-
-            <div class="col-sm-8">
-                <hr>
-                <h2>Social Distancing Enforcement Rating</h2>
-                <br>
-
-                <div class="card" style=" height: 15rem;">
-                    <div class="row no-gutters">
-                        <div class="col-auto">
-                            <br>
-                            <img src="https://i.ibb.co/ZVfGL8V/download.jpg" class="img-fluid" alt=""
-                                 style="width:250px;height:200px;padding-top: 8px;padding-bottom: 22px;padding-left: 20px;padding-right: 20px;">
-                        </div>
-                        <div class="col">
-                            <div class="card-block px-2">
-                                <br>
-                                <h4 class="card-title">Example 1</h4>
-
-
-                                <p class="card-text">Sunt in culpa qui officia deserunt mollit anim id est laborum
-                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                                <a href="#" class="btn btn-primary">Rate Safety</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>  <br>
-
-
-            <div class="col-sm-4">
-                <br>
-
-                <div id="map" style="width: 360px; height: 846px;"></div>
-
-                <script type="text/javascript">
-                  var locations = [
-                    ['San Jose', 37.3080533, -122.0126578]
-
-
-                  ];
-
-                  var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 10,
-                    center: new google.maps.LatLng( 37.3080533, -122.0126578),
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                  });
-
-                  var infowindow = new google.maps.InfoWindow();
-
-                  var marker, i;
-
-                  for (i = 0; i < locations.length; i++) {
-                    marker = new google.maps.Marker({
-                      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                      map: map
-                    });
-
-                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                      return function() {
-                        infowindow.setContent(locations[i][0]);
-                        infowindow.open(map, marker);
-                      }
-                    })(marker, i));
-                  }
-                </script>
-          </div>
-        </div>
+  </div>
+  <div class="w3-display-middle" style="padding-top:40px;padding-right:70px;">
+    <form class="form-inline my-2 my-lg-0" >
+        <input class="form-control mr-sm-2" type="search" placeholder="Find restaurants, hair salons, department stores..." aria-label="Search"size="90"style="height:50px">
+      </form>
+  </div>
+  <div class="w3-display-middle"style="padding-left:800px;padding-top:40px">
+  <button class="btn btn-outline-success" type="submit"style="height:50px;color:white;">Search</button>
+  </div>
+  <div class="w3-display-middle"style="padding-top:180px;padding-right:10px;">
+<p><a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Home</a></p>
+<p><a href="{{ url_for('stores_list', category='Restaurants') }}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Restaurants</a></p>
+<p><a href="{{ url_for('stores_list', category='Hair Salons') }}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Hair Salons</a></p>
+<p><a href="{{ url_for('stores_list', category='Department Stores_Grocery') }}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Department
+    Stores/Grocery</a></p>
+</div>
+</div>
 
 </body>
 </html>

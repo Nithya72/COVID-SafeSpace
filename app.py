@@ -1,26 +1,50 @@
-from flask import Flask, render_template, request
-from rating import ratingLogic
+from flask import Flask, render_template, request, jsonify, redirect, url_for
+from flaskext.mysql import MySQL
 from rating import storesList
+# import mysql.connector
+
 app = Flask(__name__)
 
-@app.route("/rating")
-def rating():
-    return render_template("rating.html")
+app.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_PASSWORD'] = 'nursery'
+app.config['MYSQL_DATABASE_DB'] = 'places'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+
+mysql = MySQL()
+mysql.init_app(app)
+conn = mysql.connect()
+cursor = conn.cursor()
+
+@app.route("/rating/<category>/<store_id>")
+def rating(category, store_id):
+    return render_template("rating.html", category=category, store_id=store_id)
 
 @app.route("/safetyratings", methods=['POST'])
 def safetyratings():
-    dist = request.form['dist']
-    sanitize = request.form['sanitize']
-    avail = request.form['avail']
-    precaution = request.form['precaution']
-    density = request.form['density']
-    specialhr = request.form['specialhr']
-    aisle = request.form['aisle']
+    store_id = request.form['store_id']
+    category = request.form['category']
+    ft_dist = request.form['ft_dist']
+    cart_sanitize = request.form['cart_sanitize']
+    gm_precautions = request.form['gm_precautions']
+    ess_avail = request.form['ess_avail']
+    density_control = request.form['density_control']
+    overall_rating = request.form['overall_rating']
+    ratingform = [["ft_dist", ft_dist], ["cart_sanitize",cart_sanitize], ["gm_precautions",gm_precautions], ["ess_avail",ess_avail], ["density_control",density_control], ["overall_rating",overall_rating]]
 
-    ratingform = [["dist", dist], ["sanitize",sanitize], ["avail",avail], ["precaution",precaution], ["density",density], ["specialhr",specialhr], ["aisle",aisle]]
+    print(ratingform)
 
-    stores = ratingLogic.processRatings(ratingform)
-    return render_template("index.html", title='Home', noHomePageLink=True)
+    if density_control == 'yes':
+        overall_rating = float(overall_rating) * 1.05
+        if overall_rating > 5:
+            overall_rating = 5
+
+    print("store_id",store_id)
+
+    insert_sql = "INSERT INTO ratings (store_id, ft_dist, cart_sanitize, gm_precautions, ess_avail, density_control, overall_rating) VALUES (%s, %s, %s, %s, %s, %s, %s)"
+    cursor.execute(insert_sql, (store_id, ft_dist, cart_sanitize, gm_precautions, ess_avail, density_control, overall_rating))
+    conn.commit()
+
+    return redirect(url_for('stores_list', category=category))
 
 
 @app.route("/storesList/<category>")
