@@ -49,7 +49,9 @@ def safetyratings():
 
 @app.route("/storesList/<category>")
 def stores_list(category):
-    stores = storesList.storesListings(category)
+    print (category)
+    cursor.execute('''SELECT * FROM Stores WHERE category = %s''', category)
+    stores = cursor.fetchall()
     return render_template("stores.html", title="Stores List", stores=stores)
 
 @app.route("/")
