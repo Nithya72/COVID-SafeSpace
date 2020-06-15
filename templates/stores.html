@@ -2,15 +2,16 @@
 <html lang="en">
 <head>
     <script src="http://maps.google.com/maps/api/js?sensor=false"
-          type="text/javascript"></script>
+            type="text/javascript"></script>
     <link rel="stylesheet" href="stylesheet.css">
-    <title>Social Distancing Enforcement Rating</title>
+    <title>Safe Space</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <style>
 
 
@@ -22,7 +23,7 @@
 
         #logo {
             position: absolute;;
-            top: 0;
+            top: 19px;
             left: 0;
         }
 
@@ -56,24 +57,39 @@
         .checked {
             color: orange;
         }
+
+        .main {
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        .inner {
+            display: inline-block;
+        }
+
     </style>
 </head>
 <body>
 
 <div id="logo">
-    <img src="https://i.ibb.co/VVdPcfX/f9d0dcb7-9bc2-44f2-a077-ab68a8db7cdd-200x200.png"
-         style="width:135px;height:135px;">
+    <img src="https://i.ibb.co/C0XFF5V/Final-Logo.png"
+         style="width:150px;height:100px;">
 </div>
+<div class="main">
+    <nav class="navbar-inverse nav-upper">
 
-<nav class="navbar-inverse nav-upper">
+        <form class="form-inline my-2 my-lg-0 ">
+            <input class="form-control mr-sm-2" type="search" placeholder="Where are you headed?" aria-label="Search">
 
-    <form class="form-inline my-2 my-lg-0 ">
-        <input class="form-control mr-sm-2" type="search" placeholder="Where are you headed?" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 
-    </ul>
-    </div>
+        </form>
+        <input type="image" style="margin-left: 835px ;height:70px;width:70px;"
+               src="https://i.ibb.co/mvmMj4B/circle-cropped-1.png"/>
+
+
+        </ul>
+</div>
 </nav>
 
 <nav class="navbar navbar-inverse navbar-static-top navbar-lower">
@@ -88,16 +104,23 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ url_for('home') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item" style="padding-left:2.8em">
+                <li class="nav-item" style="padding-left:1em">
                     <a class="nav-link" href="{{ url_for('stores_list', category='Restaurants') }}">Restaurants</a>
                 </li>
-                <li class="nav-item" style="padding-left:2.8em">
+                <li class="nav-item" style="padding-left:1em">
                     <a class="nav-link" href="{{ url_for('stores_list', category='Hair Salons') }}">Hair Salons</a>
                 </li>
-                <li class="nav-item" style="padding-left:2.8em">
+                <li class="nav-item" style="padding-left:1em">
                     <a class="nav-link" href="{{ url_for('stores_list', category='Department Stores_Grocery') }}">Department
                         Stores/Grocery</a>
                 </li>
+                <li class="nav-item" style="padding-left:1em">
+                    <a class="nav-link" href="">Airports</a>
+                </li>
+                <li class="nav-item" style="padding-left:1em">
+                    <a class="nav-link" href="">Parks</a>
+                </li>
+
             </ul>
         </div>
 
@@ -110,26 +133,35 @@
 
             <div class="col-sm-8">
                 <hr>
-                <h2>Social Distancing Enforcement Rating</h2>
                 <br>
 
                 {% for store in stores %}
-                    <div class="card" style=" height: 15rem; width: 45rem">
+                    <div class="card" style=" height: 23.5rem; width: 45rem">
                         <div class="row no-gutters">
                             <div class="col-auto">
                                 <br>
                                 <img src="{{ store[11] }}" class="img-fluid" alt=""
-                                     style="width:250px;height:200px;padding-top: 8px;padding-bottom: 22px;padding-left: 20px;padding-right: 20px;">
+                                     style="font-weight: bold;width:250px;height:200px;padding-top: 8px;padding-bottom: 22px;padding-left: 20px;padding-right: 20px;">
                             </div>
                             <div class="col">
                                 <div class="card-block px-2">
                                     <br>
                                     <h4 class="card-title">{{ store[1] }}</h4>
-                                    <div>SDE Ratings: {{ store[8] }} / 5</div>
-                                    <div>Location: {{ store[3] }}</div>
-                                    <div>Open Hours: {{ store[6] }}</div>
-                                    <div>Number of ratings: {{ store[7] }}</div>
-                                    <a href="{{ url_for('rating') }}" class="btn btn-primary">Rate Safety</a>
+{#                                    <div>SDE Ratings: {{ store[8] }} / 5</div>#}
+                                    <div style="font-size:20px; font-weight: bold;"> SS Ratings: {{ store[8] }} /
+                                        5
+                                    </div>
+                                    <div style="color:grey">Location: {{ store[3] }}</div>
+                                    <div style="color:grey">Open Hours: {{ store[6] }}</div>
+                                    <div style="color:grey">Number of ratings: {{ store[7] }}</div>
+{#                                    <br>#}
+{#                                    <div style="font-weight: bold;">Physical Distancing:</div>#}
+{#                                    <div style="font-weight: bold;">Surface sanitization:</div>#}
+{#                                    <div style="font-weight: bold;">Staff precautions (gloves, masks):</div>#}
+{#                                    <div>This place is operating at limited customer capacity</div>#}
+                                    <br>
+                                    <a href="{{ url_for('rating', category=store[2], store_id=store[0]) }}" class="btn btn-primary" style="margin-left: 75%;">Rate
+                                        Safety</a>
                                 </div>
                             </div>
                         </div>
@@ -142,39 +174,78 @@
                 <div id="map" style="width: 360px; height: 846px;"></div>
 
                 <script type="text/javascript">
-                  var locations = [
-                    ['San Jose', 37.3080533, -122.0126578]
+                    var locations = [
+                        ['Habit Burger', 37.352129, -121.95977],
+                        ['Olive Garden', 37.412829, -121.895848],
+                        ['Venus Cafe', 37.387145, -121.883553],
+                        ['Imagine Beauty Center', 37.387116, -121.887412]
+                    ];
 
-
-                  ];
-
-                  var map = new google.maps.Map(document.getElementById('map'), {
-                    zoom: 10,
-                    center: new google.maps.LatLng( 37.3080533, -122.0126578),
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                  });
-
-                  var infowindow = new google.maps.InfoWindow();
-
-                  var marker, i;
-
-                  for (i = 0; i < locations.length; i++) {
-                    marker = new google.maps.Marker({
-                      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                      map: map
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 10,
+                        center: new google.maps.LatLng(37.352129, -121.95977),
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
                     });
 
-                    google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                      return function() {
-                        infowindow.setContent(locations[i][0]);
-                        infowindow.open(map, marker);
-                      }
-                    })(marker, i));
-                  }
+                    var infowindow = new google.maps.InfoWindow();
+
+                    var marker, i;
+
+                    for (i = 0; i < locations.length; i++) {
+                        marker = new google.maps.Marker({
+                            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+                            map: map
+                        });
+
+                        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                            return function () {
+                                infowindow.setContent(locations[i][0]);
+                                infowindow.open(map, marker);
+                            }
+                        })(marker, i));
+                    }
                 </script>
-          </div>
+            </div>
         </div>
 
+        <footer class="container py-5">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                         class="d-block mb-2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+                        <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+                        <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+                        <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+                        <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+                        <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+                    </svg>
+                    <small class="d-block mb-3 text-muted">© 2020</small>
+                </div>
 
+
+                <div class="col-12 ">
+                    <h5>Contact us</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="">Email: xyz123@gmail.com</a></li>
+                        <li><a class="text-muted" href="">Phone number: 516-458-1234</a></li>
+                        <li><a class="text-muted" href="">Social media links</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-12">
+                    <h5>About</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a class="text-muted" href="">Team</a></li>
+                        <li><a class="text-muted" href="">Locations</a></li>
+                        <li><a class="text-muted" href="">Privacy</a></li>
+                        <li><a class="text-muted" href="">Terms</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
