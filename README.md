@@ -6,7 +6,7 @@ An app/website/plug-in/add-on where you can give a shop/mall/any other point of 
 
 Some of the staff at Walmart, Lowe's, and similar stores breach their own social distancing policies. They go against the signs they put up which recommend the distancing guidelines and precautions outlined by the government for the safety of visitors. It will be a community effort to protect the community itself. These ratings can also be for beaches, markets, parks, religious institutions, and other non-commercial locations where people gather.
 
-It will help the users assess the risk of visiting a particular place. It will also help them understand the type of precautions they should take when going there. This will also encourage people to go to the risk-prone establishments at off-peak periods if they really don’t have another option.
+It will help the users assess the risk of visiting a particular place. It will also help them understand the type of precautions they should take when going there. This will also encourage people to go to the risk-prone establishments at off-peak periods if they really don’t have another option. In fact, a low rating will force shops and other institutions to strictly enforce their social distancing guidelines. This can help increase our safety and stop the rapid spread of the virus. Businesses would not want to have a low rating, since that could lead to a decline in customers and other consequences. 
 
-In fact, a low rating will force shops and other institutions to strictly enforce their social distancing guidelines. This can help increase our safety and stop the rapid spread of the virus. Businesses would not want to have a low rating, since that could lead to a decline in customers and other consequences. 
-This idea does not have geographical restrictions, and can be implemented globally.
+## Expansion
+This idea does not have geographical restrictions, and can be implemented globally. 
