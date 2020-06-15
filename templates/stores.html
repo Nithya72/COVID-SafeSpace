@@ -68,7 +68,7 @@
 <nav class="navbar-inverse nav-upper">
 
     <form class="form-inline my-2 my-lg-0 ">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Where are you headed?" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
 
@@ -128,7 +128,7 @@
                                     <div>Location: {{ store[3] }}</div>
                                     <div>Open Hours: {{ store[6] }}</div>
                                     <div>Number of ratings: {{ store[7] }}</div>
-                                    <a href="{{ url_for('rating', category=store[2], store_id=store[0]) }}" class="btn btn-primary">Rate Safety</a>
+                                    <a href="{{ url_for('rating') }}" class="btn btn-primary">Rate Safety</a>
                                 </div>
                             </div>
                         </div>
