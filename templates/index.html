@@ -9,7 +9,7 @@
 body,h1 {font-family: "Raleway", sans-serif}
 body, html {height: 100%}
 .bgimg {
-background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ),url('https://i.ibb.co/yXpGXWV/Caring-for-Elderly-Parents-1024x708.jpg');
+background: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3) );
   min-height: 100%;
   background-position: center;
   background-size: cover;
@@ -20,6 +20,14 @@ p {
 #logo{
 
 }
+.hr3{
+            color: grey;
+            font-weight: bold;
+        }
+.hr4{
+            color:black;
+            font-weight: bold;
+        }
 .form-inlin{
     padding-top:38%;
     padding-left:23%;
@@ -38,9 +46,9 @@ p {
 
 
 <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display-middle"style="padding-bottom:150px">
+  <div class="w3-display-middle"style="padding-bottom:450px">
     <div id="logo">
-        <img src="https://i.ibb.co/VVdPcfX/f9d0dcb7-9bc2-44f2-a077-ab68a8db7cdd-200x200.png" style="width:135px;height:135px;">
+        <img src="https://i.ibb.co/C0XFF5V/Final-Logo.png" style="width:200px;height:135px;">
     </div>
     <nav class="navbar navbar-expand-sm  navbar-light">
 
@@ -54,13 +62,17 @@ p {
     <br>
 
   </div>
+  <div class="w3-display-middle"style="padding-bottom:275px">
+  
+    <h4><span class="hr4">SAFE</span><span class="hr3">ty</span> <span class="hr4">S</span><span class="hr3">can of </span><span class="hr4">P</span><span class="hr3">ublic</span> <span class="hr4">A</span><span class="hr3">reas &</span> <span class="hr4">C</span><span class="hr3">ommercial</span> <span class="hr4">E</span><span class="hr3">stablishments</span></h4>
+  </div>
   <div class="w3-display-middle" style="padding-top:40px;padding-right:70px;">
     <form class="form-inline my-2 my-lg-0" >
         <input class="form-control mr-sm-2" type="search" placeholder="Find restaurants, hair salons, department stores..." aria-label="Search"size="90"style="height:50px">
       </form>
   </div>
   <div class="w3-display-middle"style="padding-left:800px;padding-top:40px">
-  <button class="btn btn-outline-success" type="submit"style="height:50px;color:white;">Search</button>
+  <button class="btn btn-outline-success" type="submit"style="height:50px;color:black;">Search</button>
   </div>
   <div class="w3-display-middle"style="padding-top:180px;padding-right:10px;">
 <p><a href="{{ url_for('home') }}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Home</a></p>
