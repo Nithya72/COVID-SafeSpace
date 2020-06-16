@@ -175,6 +175,24 @@ ALTER TABLE `Ratings`
   ADD CONSTRAINT `ratings_ibfk_2` FOREIGN KEY (`store_id`) REFERENCES `Stores` (`store_id`);
 COMMIT;
 
+alter table stores
+ add `sd_rating` decimal(2,1) DEFAULT NULL;
+ 
+ alter table stores
+ add `precaution_rating` decimal(2,1) DEFAULT NULL;
+ 
+ alter table stores
+ add `dc_rating` decimal(2,1) DEFAULT NULL;
+ 
+update Stores    set sd_rating = 3.5, precaution_rating = 3.5 where store_id = 20;
+update Stores    set sd_rating = 3.5, precaution_rating = 3.5 where store_id = 21;
+update Stores     set sd_rating = 2.5, precaution_rating = 2.5 where store_id = 22; 
+update Stores     set sd_rating = 3, precaution_rating = 3 where store_id = 24;
+update Stores   set sd_rating = 3, precaution_rating = 3 where store_id = 25;
+update Stores   set sd_rating = 2.8, precaution_rating = 2.8 where store_id = 26;
+update Stores   set sd_rating = 4, precaution_rating = 4 where store_id = 27;
+update Stores set sd_rating = 5, precaution_rating = 5 where store_id = 28;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

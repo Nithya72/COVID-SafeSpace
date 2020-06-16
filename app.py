@@ -42,7 +42,6 @@ def safetyratings():
     if category == "Restaurants":
         table_sanitize = request.form['table_sanitize']
         curbside_pickup = request.form['curbside_pickup']
-
     else:
         cart_sanitize = request.form['cart_sanitize']
         ess_avail = request.form['ess_avail']
@@ -73,19 +72,27 @@ def safetyratings():
         rating_data = cursor.fetchmany(5)
         rating = 0
         count = 0
+        sd_rating = 0
+        precaution_rating = 0
+
         for row in rating_data:
-            print(row)
+            # print(row)
             rating = rating+row[2]
+            sd_rating = sd_rating + row[3]
+            precaution_rating = precaution_rating + row[5]
             count=count+1
 
         avg_rating = rating/count
+        sd_rating = sd_rating/count
+        precaution_rating = precaution_rating/count
 
         print("avg_rating", avg_rating)
-        print("rating", rating)
+        print("sd_rating", sd_rating)
+        print("precaution_rating", precaution_rating)
         print("count", count)
 
-        update_sql = "UPDATE Stores SET star_rating= %s WHERE store_id = %s"
-        cursor.execute(update_sql, (avg_rating, store_id))
+        update_sql = "UPDATE Stores SET star_rating= %s, sd_rating=%s, precaution_rating=%s  WHERE store_id = %s"
+        cursor.execute(update_sql, (avg_rating, sd_rating, precaution_rating, store_id))
 
     except Exception as ex:
         print("Problem Executing SQL queries: " + str(ex))

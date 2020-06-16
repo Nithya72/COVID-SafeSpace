@@ -122,6 +122,26 @@
                 width: 100%;
             }
 
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+            .dropdown-content a:hover {
+                background-color: #f1f1f1
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            .dropdown:hover .dropbtn {
+                background-color: #3e8e41;
+            }
+
             ::after,
             ::before {
                 height: 100%;
@@ -252,7 +272,7 @@
                                 <br> <br>
                                 <br> <br><br>
                                 <h7>Does the store administer customer density control? (establishments are supposed to
-                                    be operating at partial capacity)
+                                    be operating at partial capacity)?
                                 </h7>
                                 <br>
                                 <br>
@@ -269,7 +289,7 @@
                                 </div>
 
 
-                                <br> <br><br><br><br>
+                                <br> <br><br>
                                 <h7>Is curbside side delivery easily available?</h7>
                                 <br>
                                 <br>
@@ -289,7 +309,7 @@
                                 <br><br><br>
 
                                 <h7>Please provide your overall rating for the enforcement of COVID safety measures by
-                                    the store
+                                    the store:
                                 </h7>
                                 <br> <br>
                                 (1 = Poor)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -308,13 +328,15 @@
                                 <br><br>
                                 <h7>What mode of transportation did you use to reach this store?</h7>
                                 <br><br><br>
-                                <div class="dropdown">
-                                    <select name="transport_mode">
-                                        <option selected="selected" value="0">--Select--</option>
-                                        <option value="1">Private transport</option>
-                                        <option value="2">Public transport</option>
-                                        <option value="3">Ridesharing service (Uber, Lyft)</option>
-                                        <option value="4">Walking</option>
+                                    <div class="dropdown" style="margin-left: 20%;">
+                                    <select name="transport_mode" class="btn btn-secondary">
+
+                                            <option selected="selected" value="0">--Select--</option>
+                                            <option value="1">Private transport</option>
+                                            <option value="2">Public transport</option>
+                                            <option value="3">Ridesharing service (Uber, Lyft)</option>
+                                            <option value="4">Walking</option>
+
                                     </select>
                                 </div>
 
