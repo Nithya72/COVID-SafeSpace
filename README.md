@@ -1,4 +1,4 @@
-# COVID-SafetyMeasuresEnforcementRating
+# COVID-SAFEty Scan of Public Areas & Commercial Establishments (SAFE SPACE)
 
 ## Overview
 
