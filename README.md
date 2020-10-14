@@ -21,6 +21,7 @@ It will help the users assess the risk of visiting a particular place. It will a
 <p align="center">
   <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/rating.png"/>
 </p>
+
 ## Expansion
 This idea does not have geographical restrictions, and can be implemented globally. 
 
