@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/ss_logo.png"/>
+  <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/ss_logo.png" width="200" height="150"/>
     <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/ss_title.png"/>
 </p>
 
