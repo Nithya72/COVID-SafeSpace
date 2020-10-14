@@ -12,5 +12,16 @@ Some of the staff at Walmart, Lowe's, and similar stores breach their own social
 
 It will help the users assess the risk of visiting a particular place. It will also help them understand the type of precautions they should take when going there. This will also encourage people to go to the risk-prone establishments at off-peak periods if they really don’t have another option. In fact, a low rating will force shops and other institutions to strictly enforce their social distancing guidelines. This can help increase our safety and stop the rapid spread of the virus. Businesses would not want to have a low rating, since that could lead to a decline in customers and other consequences. 
 
+## **Application Front Page**
+<p align="center">
+  <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/front.png"/>
+</p>
+
+## **List of Restaurants and their SS ratings**
+<p align="center">
+  <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/rating.png"/>
+</p>
 ## Expansion
 This idea does not have geographical restrictions, and can be implemented globally. 
+
+Photo/Image courtesy of Yelp [Copyright © 2020 Yelp Inc., 140 New Montgomery, San Francisco, CA 94105, U.S.A.]. All Rights reserved.
