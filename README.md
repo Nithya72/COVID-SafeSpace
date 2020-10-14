@@ -1,4 +1,8 @@
-# COVID-SAFEty Scan of Public Areas & Commercial Establishments (SAFE SPACE)
+
+<p align="center">
+  <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/ss_logo.png"/>
+    <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/ss_title.png"/>
+</p>
 
 ## Overview
 
