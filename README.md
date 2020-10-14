@@ -14,12 +14,12 @@ It will help the users assess the risk of visiting a particular place. It will a
 
 ## **Application Front Page**
 <p align="center">
-  <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/front.png"/>
+  <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/front.png" width="700" height="400"/>
 </p>
 
 ## **List of Restaurants and their SS ratings**
 <p align="center">
-  <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/rating.png"/>
+  <img src="https://github.com/Nithya72/COVID-SafeSpace/blob/develop/rating.png" width="700" height="450" style="border:5px solid black"/>
 </p>
 
 ## Expansion
